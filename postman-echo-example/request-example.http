@@ -1,0 +1,16 @@
+GRAPHQL https://graphql.postman-echo.com/graphql
+
+query {
+    hello (person: {name: "Zdravo"})
+}
+
+###
+GRAPHQL https://graphql.postman-echo.com/graphql
+
+mutation {
+    createPerson (person: {name: "Ciao", age: 99}) {id, name, age}
+}
+# function params - what we are sending
+# function body has list of fields to return
+
+###

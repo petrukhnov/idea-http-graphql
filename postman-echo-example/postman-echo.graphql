@@ -1,0 +1,48 @@
+# This file was generated. Do not edit manually.
+
+schema {
+    query: Query
+    mutation: Mutation
+    subscription: Subscription
+}
+
+"Indicates exactly one field must be supplied and this field must not be `null`."
+directive @oneOf on INPUT_OBJECT
+
+type Mutation {
+    "Creates a object of type Person that you can send a hello request to."
+    createPerson(person: PersonInput!): Person!
+}
+
+"Describes the Person type that will display either the inputPerson specified in the query request or deliver the default Person which is a hard coded name."
+type Person {
+    age: Int
+    id: ID!
+    name: String!
+}
+
+type Query {
+    "Says hello to the person. If the person is not specified in the query, says hello to a default person."
+    hello(person: PersonInput): String!
+    "Returns request metadata."
+    request: Request!
+}
+
+type Request {
+    "Returns read-only request headers of the request sent."
+    headers: Headers!
+}
+
+type Subscription {
+    "Returns a stream of hello greetings in different languages."
+    greetings: String!
+}
+
+scalar Headers
+
+"Describes the input type PersonInput you will use in the query specify the person you want to send a hello request to. This input type can also be used in the creation of a new object of type Person."
+input PersonInput {
+    "Age is not a mandatory field."
+    age: Int
+    name: String!
+}

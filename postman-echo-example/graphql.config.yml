@@ -1,0 +1,7 @@
+schema: postman-echo.graphql
+extensions:
+  endpoints:
+    Remote GraphQL Endpoint:
+      introspect: true
+      url: https://graphql.postman-echo.com/graphql
+      
